@@ -6,9 +6,20 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /><!--this sets the scale to 100% upon opening and does not allow the user to zoom-in/out.-->
     
     <title>Data Collector for AGOL!</title>
-         
-    <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css" />
-    <script src="https://js.arcgis.com/4.30/"></script>
+    
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.26/"></script>
 
     <script>
         require(["esri/Config", "esri/Map", "esri/views/MapView"], (esriConfig, Map, MapView) => {
@@ -28,16 +39,7 @@
             });
         });
     </script>
-    <style>
-        html,
-        body,
-        #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+ 
 </head>
 <body>
    
