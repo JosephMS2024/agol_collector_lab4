@@ -51,8 +51,10 @@
                 view: view
             });
          
-            const layer = new FeatureLayer
+            const layer = new FeatureLayer({
                 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_25971b1cb25d4b7da434fc426a210dde_results/FeatureServer"
+            });
+            
             map.add(layer);
             
             view.ui.add(searchWidget, {
