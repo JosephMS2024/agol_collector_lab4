@@ -27,8 +27,9 @@
                 "esri/Map", 
                 "esri/views/MapView",
                 "esri/widgets/Locate",
-                "esri/widgets/Search"
-            ], function(esriConfig, Map, MapView, Locate, Search) {
+                "esri/widgets/Search",
+                "esri/layers/FeatureLayer"
+            ], function(esriConfig, Map, MapView, Locate, Search, FeatureLayer) {
             
             esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurDz4gU3tTW0RIc-K_Y4-kqaP1xP59QOvyV7mnktLb7t9a2vHFbAFzc7ArSALcovTWnZdcLXc_6UH-L5TIwWOr0Bo014MatGJtlve8jinAwBM0USHG8Ht-osKvJmOiou8JMtMMW-C-eyvOt6PooGvVcD9mDUjXh70tOTl-1hxgP48wjkwrkiAqaLQAI9nf2wAj1tCOhao8tyZY3EP4cMdWxcc1WVA3FcyRDX5Nx1uX3JaAT1_VFqKPzAC";
             
@@ -45,18 +46,25 @@
             const locateBtn = new Locate({
                 view: view
             });
-
-            view.ui.add(locateBtn, {
-                position: "top-right"
-            });
+            
             const searchWidget = new Search({ //lab 4 challenge 2
                 view: view
             });
+         
+            const layer = new FeatureLayer
+                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_25971b1cb25d4b7da434fc426a210dde_results/FeatureServer"
+            map.add(layer);
+            
             view.ui.add(searchWidget, {
                 position: "top-left",
                 index: 2
             });
+            
+            view.ui.add(locateBtn, {
+                position: "top-right"
+            });
         });
+
     </script>
 </head>
 <body>
